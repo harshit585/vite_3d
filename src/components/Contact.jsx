@@ -5,11 +5,11 @@ import Map from "./Map";
 
 const Section = styled.div`
   height: 100vh;
-  scroll-snap-align: center;
 `;
 
 const Container = styled.div`
   max-width: 1400px;
+  margin: 0 auto;
   padding: 30px;
   height: 100%;
   display: flex;
@@ -82,7 +82,12 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_id", "template_id", ref.current, "public_key")
+      .sendForm(
+        "service_i53mpgk",
+        "template_i7yq2et",
+        ref.current,
+        "0OWmsrnPkovNyOAsj"
+      )
       .then(
         (result) => {
           console.log(result.text);
