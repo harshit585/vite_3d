@@ -14,7 +14,7 @@ const Section = styled.div`
   padding: 30px;
 
   @media only screen and (max-width: 768px) {
-    height: 200vh;
+    height: 150vh;
     padding: 0px;
   }
 `;

@@ -65,9 +65,7 @@ const ListItem = styled.li`
   position: relative;
 
   @media only screen and (max-width: 768px) {
-    font-size: 40px;
-    color: white;
-    -webkit-text-stroke: 0px;
+    font-size: 30px;
   }
 
   ::after {
