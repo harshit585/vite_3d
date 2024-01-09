@@ -21,6 +21,10 @@ const Section = styled.div`
   color: black;
   font-size: 14px;
   font-weight: 300;
+
+  @media only screen and (max-width: 768px) {
+    padding: 0px;
+  }
 `;
 
 const Container = styled.div`

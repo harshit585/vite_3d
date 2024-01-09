@@ -8,6 +8,10 @@ const Section = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: 768px) {
+    height: 150vh;
+  }
 `;
 
 const Container = styled.div`
@@ -16,13 +20,18 @@ const Container = styled.div`
   padding: 30px;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    padding: 0px;
+  }
 `;
 
 const Left = styled.div`
   flex: 1;
 
   @media only screen and (max-width: 768px) {
-    display: none;
+    display: block;
   }
 `;
 
@@ -82,7 +91,7 @@ const Who = () => {
     <Section>
       <Container>
         <Left>
-          <Canvas camera={{ position: [5, 5, 5], fov: 25 }}>
+          <Canvas camera={{ position: [1, 1, 10], fov: 25 }}>
             <Suspense fallback={null}>
               <ambientLight intensity={0.5} />
               <directionalLight position={[3, 2, 1]} />

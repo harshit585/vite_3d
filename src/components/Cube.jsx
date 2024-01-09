@@ -4,12 +4,17 @@ import { useFrame } from "@react-three/fiber";
 
 const Cube = () => {
   const textRef = useRef();
-  useFrame(
-    (state) =>
-      (textRef.current.position.x = Math.sin(state.clock.elapsedTime) * 2)
-  );
+  const meshRef = useRef();
+  useFrame((state) => {
+    textRef.current.position.x = Math.sin(state.clock.elapsedTime) * 2;
+  });
+
+  useFrame((state) => {
+    meshRef.current.position.y = Math.tan(state.clock.elapsedTime) * 2;
+    meshRef.current.position.z = Math.sin(state.clock.elapsedTime) * 2;
+  });
   return (
-    <mesh>
+    <mesh ref={meshRef}>
       <boxGeometry />
       <meshStandardMaterial>
         <RenderTexture attach="map">

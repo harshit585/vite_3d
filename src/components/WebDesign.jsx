@@ -1,4 +1,4 @@
-import { OrbitControls, OrthographicCamera } from "@react-three/drei";
+import { Gltf, OrbitControls, OrthographicCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import styled from "styled-components";
@@ -14,7 +14,14 @@ const WebDesign = () => {
           <ambientLight />
           <directionalLight intensity={11} position={[50, 50, 50]} />
           <OrthographicCamera makeDefault position={[100, 100, 500]} />
-          <Mclaren />
+          {/* <Mclaren /> */}
+          <Gltf
+            castShadow
+            receiveShadow
+            // rotation={[-Math.PI / 2, 0, 0]}
+            scale={1}
+            src="/mclaren.glb"
+          />
           {/* </Stage> */}
           <OrbitControls enableZoom={false} autoRotate />
         </Suspense>
