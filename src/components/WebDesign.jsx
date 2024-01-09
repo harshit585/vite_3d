@@ -1,11 +1,19 @@
 import { Gltf, OrbitControls, OrthographicCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Mclaren } from "./Mclaren";
 // import Mac from "./Mac";
 
 const WebDesign = () => {
+  const [width, setWidth] = useState(1);
+  useEffect(() => {
+    if (screen.width < 720) {
+      setWidth(0.5);
+    } else {
+      setWidth(1);
+    }
+  }, [screen.width]);
   return (
     <>
       <Canvas>
@@ -19,7 +27,7 @@ const WebDesign = () => {
             castShadow
             receiveShadow
             // rotation={[-Math.PI / 2, 0, 0]}
-            scale={1}
+            scale={width}
             src="/mclaren.glb"
           />
           {/* </Stage> */}
