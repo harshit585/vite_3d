@@ -141,7 +141,7 @@ const Hero = () => {
         <Right>
           <Canvas>
             <Suspense fallback={null}>
-              <OrbitControls enableZoom={false} />
+              <OrbitControls enableZoom={false} enableRotate={false} />
               <ambientLight intensity={1} />
               <directionalLight position={[3, 2, 1]} />
               <Sphere args={[1, 100, 200]} scale={2.8}>
