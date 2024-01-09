@@ -5,6 +5,10 @@ import Map from "./Map";
 
 const Section = styled.div`
   height: 100vh;
+
+  @media only screen and (max-width: 768px) {
+    height: auto;
+  }
 `;
 
 const Container = styled.div`
@@ -18,6 +22,7 @@ const Container = styled.div`
 
   @media only screen and (max-width: 768px) {
     padding: 30px 0px;
+    flex-direction: column;
   }
 `;
 
@@ -72,10 +77,6 @@ const Button = styled.button`
 
 const Right = styled.div`
   flex: 1;
-
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const Contact = () => {
