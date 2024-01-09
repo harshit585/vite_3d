@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
@@ -27,7 +27,7 @@ const Container = styled.div`
 
   @media only screen and (max-width: 768px) {
     width: 100%;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
   }
@@ -123,6 +123,16 @@ const Img = styled.img`
 `;
 
 const Hero = () => {
+  const [width, setWidth] = useState(2.8);
+
+  useEffect(() => {
+    if (screen.width < 720) {
+      setWidth(2.3);
+    } else {
+      setWidth(2.8);
+    }
+  }, [screen.width]);
+
   return (
     <Section>
       <Navbar />
@@ -144,7 +154,7 @@ const Hero = () => {
               <OrbitControls enableZoom={false} enableRotate={false} />
               <ambientLight intensity={1} />
               <directionalLight position={[3, 2, 1]} />
-              <Sphere args={[1, 100, 200]} scale={2.8}>
+              <Sphere args={[1, 100, 200]} scale={width}>
                 <MeshDistortMaterial
                   color="#3d1c56"
                   attach="material"
@@ -154,7 +164,9 @@ const Hero = () => {
               </Sphere>
             </Suspense>
           </Canvas>
-          <Img src="./image/img/moon.png" />
+          <div>
+            <Img src="./image/img/moon.png" />
+          </div>
         </Right>
       </Container>
     </Section>

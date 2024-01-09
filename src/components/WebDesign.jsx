@@ -1,8 +1,6 @@
 import { Gltf, OrbitControls, OrthographicCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import React, { Suspense, useEffect, useState } from "react";
-import styled from "styled-components";
-import { Mclaren } from "./Mclaren";
+import { Suspense, useEffect, useState } from "react";
 // import Mac from "./Mac";
 
 const WebDesign = () => {
